@@ -1,0 +1,42 @@
+.heading{
+	/* margin:0px; */
+	margin-left:5px;
+	margin-right:5px;
+	border-bottom:1px solid #ccc;
+}	
+.classesview{
+	margin-left:5px;
+	margin-right:5px;
+}
+.row-heading .col-md-6{
+	padding:0px;
+}
+/* .container{ */
+/* 	background:black; */
+/* } */
+/* .col-md-6{ */
+/* 	background:green; */
+/* } */
+.project-contents{
+	margin-top:10px;
+	margin-left:0px;
+	padding:10px;
+	border:2px solid #ccc;
+}
+.row-heading .col-md-6
+	padding:0px;
+}
+.classrow{
+	margin-top:5px;
+	/* padding:10px 5px 10px 5px; */
+	margin-left:5px;
+	margin-right:5px;
+	/* padding:0px; */
+}
+.alignment{
+	margin-top:10px;
+}
+.form-control{
+	margin-top:5px;
+	margin-bottom:5px;
+}

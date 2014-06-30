@@ -1,0 +1,88 @@
+<template name="projectview">
+<head>
+	<title>Project View</title>
+</head>
+
+<body class="theme">
+	{{>projectviewbody}}
+</body>
+</template>
+<template name='projectviewbody'>
+	<div class='container'>
+		<div class='row heading page-header'>
+			<div class="col-md-6">
+				{{#with project}}
+					<h1>{{ProjectName}}</h1>
+				{{/with}}
+			</div>
+			<div class="col-md-6">
+				<button class='btn btn-primary alignment pull-right'><h4>Preferences</h4></button>
+			</div>
+		</div>
+		<div class='col-md-12 project-contents'>
+			<div class='bordered col-md-6'>
+				<div class='row-heading heading row'>
+					<div class="col-md-6 "><h2>Classes</h2></div>
+					<div class="col-md-6"><button class='btn btn-primary alignment pull-right' data-toggle="modal" data-target="#newClass"><h5>Add Class</h5></button></div>
+				</div>
+				<div class="classesview">
+					{{>classesview}}
+				</div>
+			</div>
+			<div class='col-md-6'>
+				<div class="row row-heading right-subview">
+					<h2>Class Data</h2>
+				</div>
+			</div>
+		</div>
+		{{#with project}}
+		{{>projectviewmodals}}
+		{{/with}}
+	</div>
+</template>
+<template name='classesview'>
+	<div class="list-group">
+		{{#each classes}}
+		<a id={{_id}} class='projectrow classrow list-group-item {{isActive _id}}' data-source={{ProjectId}}>
+			<!-- <div class="row"> -->
+				<span class="col-md-10">{{ClassName}}</span>
+				<button class='btn glyphicon glyphicon-edit editClass'></button>
+				<button class="btn glyphicon glyphicon-trash pull-right deleteClass"></button>
+			<!-- </div> -->
+		</a>
+		{{/each}}
+	</div>
+</template>
+<template name="projectviewmodals">
+  <!-- Start of Modal Stuff.... -->
+	<!-- Modal : New Class -->
+  <div class='modal fade' id='newClass'>
+		<div class='modal-dialog'>
+		  <div class='modal-content'>
+				<div class='modal-header'>
+					<button data-dismiss='modal' class='close' aria-hidden="true">&times;</button>
+					<h4 class="modal-title">New Class</h4>
+				</div>
+				<div class='modal-body'>
+					<div class="row">
+						<input id="newClassName" type='text' placeholder='Class Name' class='form-control ' autofocus="true" required>
+						<textarea id="newClassDescription" rows='3' class="form-control " placeholder="Description" ></textarea>
+					</div>
+				</div>
+				<div class='modal-footer'>
+					<button data-dismiss='modal' class='btn btn-default'>Close</button>
+					<button data-dismiss='modal' id='createClass' class='btn btn-primary'>Create</button>
+				</div>
+			</div>
+		</div>
+  </div>
+	<!-- <div class='modal fade' id="newClass"> -->
+	<!--   <!&#45;&#45; <div class='modal&#38;#45;dialog'> &#45;&#45;> -->
+	<!--     <div class='modal&#45;content'> -->
+	<!--       <div class='modal&#45;header'></div> -->
+	<!--       <div class='modal&#45;body'></div> -->
+	<!--       <div class='modal&#45;footer'></div> -->
+	<!--     </div> -->
+	<!--   <!&#45;&#45; </div> &#45;&#45;> -->
+	<!-- </div> -->
+</template>

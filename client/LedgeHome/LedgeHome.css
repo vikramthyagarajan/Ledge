@@ -1,0 +1,49 @@
+/* CSS declarations go here */
+.container{
+	/* background:red; */
+}
+.page-header{
+	/* background:blue; */
+}
+#menu{
+	margin-top:15px;
+	margin-bottom:15px;
+	margin-left:0px;
+	/* background:black; */
+}
+.projectrow{
+	padding-right:5px;
+	padding-left:5px;
+	/* font-size:15px; */
+}
+.projectrow span{
+	margin-top:5px;
+}
+.btn-group{
+	padding-left:0px;
+	padding-right:0px;
+}
+#projectslist{
+	margin-top:10px;
+	margin-left:0px;
+	padding:10px;
+	border:2px solid #ccc;
+	/* background:pink; */
+}
+.list-group{
+	margin-top:10px;
+}
+.row-heading{
+	border-bottom:1px solid #ccc;
+	padding-bottom:10px;
+}
+.bordered{
+	border-right:2px solid #ccc;
+}
+.right-subview{
+	margin-left:10px;
+	margin-right:5px;
+}
+/* .col-md-6{ */
+/* 	background:green; */
+/* } */

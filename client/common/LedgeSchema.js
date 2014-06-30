@@ -1,0 +1,12 @@
+LedgeSchema={
+	Projects:{
+		Name:'ProjectName',
+		Description:'ProjectDescription',
+		Classes:'Classes'
+	},
+	Classes:{
+		Name:'ClassName',
+		Description:'ClassDescription',
+		Project:'ProjectId'
+	}
+}

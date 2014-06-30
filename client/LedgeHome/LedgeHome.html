@@ -1,0 +1,72 @@
+<template name="homepage">
+	<head>
+	  <title>Ledge</title>
+	</head>
+
+	<body class="theme">
+	  {{> homepagebody}}
+	</body>
+</template>
+
+<template name="homepagebody">
+  <div class="container">
+		<div class="row page-header"><h1 class="col-md-6">Ledge</h1></div>  
+	  <div id="menu" class='row btn-group btn-group-lg col-md-12'>
+		  <button class='btn btn-default btn-large col-md-4' data-toggle="modal" data-target="#newProject">New Project</button>
+		  <button class='btn btn-default btn-large col-md-4 '>Open Project</button>
+		  <button class='btn btn-default btn-large col-md-4'>Delete Project</button>
+	  </div>
+    <div id="projectslist" class='row col-md-12'>
+      <div class='col-md-6 bordered'>
+				<div class="row-heading" >
+					<h2>Projects</h2>
+				</div>
+				{{>projectsview}}
+      </div>
+      <div class='col-md-6'>
+				<div class="row row-heading right-subview" >
+					<h2>Project Data</h2>
+				</div>
+      </div>
+    </div>
+		{{>homepagemodals}}
+  </div>
+</template>
+
+<!-- TODO: Not rely on Meteor's reactivity as it is inefficient. redesign isActive -->
+<template name='projectsview'>
+<div class='list-group'>
+{{#each projects}}
+		<!-- <div id={{_id}} class="projectrow list&#45;group&#45;item {{isActive _id}}"> -->
+		<a id={{_id}} class="projectrow list-group-item {{isActive _id}}">
+			<span class="col-md-10">{{ProjectName}}</span>
+			<button class='btn glyphicon glyphicon-folder-open openProject'></button>
+			<button class='btn glyphicon glyphicon-trash pull-right deleteProject'></button>
+		</a>
+	{{/each}}
+</div>
+</template>
+<template name='homepagemodals'>
+	<!-- Start of Modal Stuff.... -->
+	<!-- Modal: New Project -->
+	<div class='modal fade' id='newProject' aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class='modal-header'>
+					<button data-dismiss='modal' class='close' aria-hidden="true">&times;</button>
+					<h4 class="modal-title">New Project</h4>
+				</div>
+				<div class='modal-body'>
+					<div class="row">
+						<input id="newProjectName" type='text' placeholder='Project Name' class='form-control col-md-5' autofocus="true" required>
+						<textarea id="newProjectDescription" rows='3' class="form-control col-md-5" placeholder="Description" ></textarea>
+					</div>
+				</div>
+				<div class='modal-footer'>
+					<button data-dismiss='modal' class='btn btn-default'>Close</button>
+					<button id='createProject' class='btn btn-primary'>Create</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
